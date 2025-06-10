@@ -13,18 +13,6 @@ while [[ $hasWG == '' ]];do
     break;
 done
 
-hasRC=$(which resolvconf)
-while [[ $hasRC == '' ]];do
-    echo 'resolvconf not installed, attempting to install...'
-    apt-get install -y resolvconf
-    exit 1
-done
-
-systemctl stop resolvconf
-rm -f /etc/resolv.conf
-ln -s /run/resolvconf/resolv.conf /etc/resolv.conf
-systemctl restart resolvconf
-
 hasQR=$(which qrencode)
 while [[ $hasQR == '' ]];do
     echo 'qrencode not installed, attempting to install...'
