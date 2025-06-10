@@ -12,12 +12,6 @@ while [[ $hasWG == '' ]];do
     exit 1
 done
 
-hasRC=$(which resolvconf)
-while [[ $hasRC == '' ]];do
-    echo 'resolvconf not installed. Run wireguard-autoconfig.sh first.'
-    exit 1
-done
-
 hasQR=$(which qrencode)
 while [[ $hasQR == '' ]];do
     echo 'qrencode not installed. Run wireguard-autoconfig.sh first.'
