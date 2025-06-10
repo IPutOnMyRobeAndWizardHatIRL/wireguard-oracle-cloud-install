@@ -11,7 +11,7 @@ Oracle Cloud instances need some additional configuration to get WireGuard up an
 ## Installation
 Install dependencies:
 ```bash
-sudo apt-get update && sudo apt-get install -y wireguard qrencode resolvconf git
+sudo apt-get update && sudo apt-get install -y wireguard qrencode git
 ```
 
 Continue as root:
@@ -58,6 +58,7 @@ sudo ufw disable
 1 - Go to /etc/iptables/rules.v4
 
 ```bash
+sudo cp /etc/iptables/rules.v4 /etc/iptables/rules.v4.bak
 sudo nano /etc/iptables/rules.v4
 ```
 
